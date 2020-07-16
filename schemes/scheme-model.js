@@ -33,7 +33,7 @@ function add(scheme) {
     return db('schemes')
         .insert(scheme)
         .then(ids => {
-            return getById(ids[0]);
+            return findById(ids[0]);
         });
 }
 
@@ -42,7 +42,7 @@ function update(changes, id) {
         .where({ id })
         .update(changes)
         .then(() => {
-            return getById(id);
+            return findById(id);
         });
 }
 
